@@ -39,7 +39,7 @@ class TrimFile
       return false
     end
     unless File.exists?("#{folder_path}/#{REGEXP_FILE}")
-      p('No file error. Place your regexp file in your inputted path.')
+      p 'No file error. Place your regexp file in your inputted path.'
       return false
     end
     if Dir.glob("#{folder_path}/*").size == 1
@@ -53,19 +53,19 @@ class TrimFile
     new_files = {}
     row_file_list.each do |row_file_path|
       File.open(row_file_path,'r') do |row_file|
-        lines = []
-        while line = row_file.gets
+        new_lines = []
+        while row_line = row_file.gets
           regexp.each do |exp|
-            if line =~ exp
+            if row_line =~ exp
               match_words = []
               (Regexp.last_match.size-1).times do |idx|
                 match_words << Regexp.last_match[idx+1]
               end
-              lines << match_words.join(", ") if match_words.size > 0
+              new_lines << match_words.join(", ") if match_words.size > 0
             end
           end
         end
-        new_files[File.basename(row_file_path).to_sym] = lines
+        new_files[File.basename(row_file_path).to_sym] = new_lines
       end
     end
     new_files
