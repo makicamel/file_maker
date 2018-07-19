@@ -55,7 +55,15 @@ class TrimFile
       File.open(row_file_path,'r') do |row_file|
         lines = []
         while line = row_file.gets
-          regexp.each {|exp| lines << $1 if line =~ exp }
+          regexp.each do |exp|
+            if line =~ exp
+              match_words = []
+              (Regexp.last_match.size-1).times do |idx|
+                match_words << Regexp.last_match[idx+1]
+              end
+              lines << match_words.join(", ") if match_words.size > 0
+            end
+          end
         end
         new_files[File.basename(row_file_path).to_sym] = lines
       end
