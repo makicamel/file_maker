@@ -11,6 +11,7 @@
   - You can write some lines not only one line in the regexp.txt.  
   - If you want to change the regular expression file name or folder name for new files,  
     you can custom them by changing constant 'REGEXP_FILE' or 'NEW_FOLDER'.  
+  - You can skip making new files process by adding file names to 'IGNORE_LIST' constant.
 # Contributing
   This is my first tool.  
   I'm veeeeery grad if you file an issue, pull request or something.  
@@ -30,3 +31,5 @@
 # 注意点
   - 正規表現は複数行書くことができます  
   - 正規表現ファイルや置換フォルダ名は'REGEXP_FILE', 'NEW_FOLDER'定数で変更できます  
+  - 'IGNORE_LIST'定数にファイル名を追加して、処理をスキップすることができます  
+
