@@ -4,7 +4,7 @@
   This'll help at the time you want to pick phrases from a big log file or many files.  
 # Usage
   1. Put a file named 'regexp.txt' written in regular expression and some files you want to trim same directory.  
-  2. Run this script like; 'ruby trim_file.rb'  
+  2. Run this script like; 'ruby file_maker.rb'  
   3. And input **absolute** path to the directory. ex) /path/to/directory  
   4. Then you can find new files at the specified folder.  
 # Notice
@@ -24,7 +24,7 @@
   大量のログから必要な情報を抽出する時等に便利です。  
 # 使用法
   1. 正規表現を記述した'regexp.txt'と、正規表現で置換したいファイルを好きなディレクトリに置きます。  
-  2. trim_fileを実行します; 'ruby trim_file.rb'  
+  2. file_makerを実行します; 'ruby file_maker.rb'  
   3. 先ほどファイルを置いたディレクトリのパスを **絶対パスで** 入力します。 例) /path/to/directory  
   4. 'Finished!'のメッセージが出たら、置換されたファイルフォルダが同じディレクトリに作成されています  
 # 注意点

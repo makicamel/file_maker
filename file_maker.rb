@@ -5,7 +5,7 @@
 
 require 'fileutils'
 
-class TrimFile
+class FileMaker
 
   REGEXP_FILE = "regexp.txt"
   NEW_FOLDER  = "new"
@@ -95,5 +95,5 @@ class TrimFile
   end
 end
 
-tf = TrimFile.new
-tf.main
+fm = FileMaker.new
+fm.main
