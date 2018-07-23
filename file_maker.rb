@@ -20,7 +20,7 @@ class FileMaker
     new_folder_path  = "#{folder_path}/#{NEW_FOLDER}"
     regexp_file_path = "#{folder_path}/#{REGEXP_FILE}"
     ignore_file_list = IGNORE_LIST.map{|path| "#{folder_path}/#{path}"}.push(regexp_file_path)
-    row_file_list    = Dir.glob("#{folder_path}/*").reject{|path| ignore_file_list.include?(path) || File.ftype(path) != 'file'}
+    row_file_list    = Dir.glob("#{folder_path}/*", File::FNM_DOTMATCH).reject{|path| ignore_file_list.include?(path) || File.ftype(path) != 'file'}
     regexp = get_regexp(regexp_file_path)
     new_files = sub_files(row_file_list, regexp)
 
